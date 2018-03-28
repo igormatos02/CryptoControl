@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+ 
+    <link rel="stylesheet" href="~/Content/fonts/webfont/cryptocoins.css">
+
+
+   
+
+
+    <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-data-adapter.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.1.0/css/anychart-ui.min.css" />
+    <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.1.0/fonts/css/anychart-font.min.css" />
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="wrapper">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Refresh", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a class="navbar-brand" href="#" ng-click="addModal()"> + Add Transaction</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year -My Crypto Currency Control</p>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/ui-bootstrap.min.js"></script>
+    <script src="~/Scripts/highchart/js/highcharts.js"></script>
+</body>
+</html>

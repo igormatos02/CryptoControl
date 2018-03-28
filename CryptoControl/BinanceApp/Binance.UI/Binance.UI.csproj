@@ -1,0 +1,549 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{88C80FAC-6DA1-4D2D-B5E7-962F247E0A1B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Binance.UI</RootNamespace>
+    <AssemblyName>Binance.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="websocket-sharp, Version=1.0.2.32519, Culture=neutral, PublicKeyToken=5660b08a1845a91e, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebSocketSharp-NonPreRelease.1.0.0\lib\net35\websocket-sharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\add.html" />
+    <Content Include="Content\fonts\.gitignore" />
+    <Content Include="Content\fonts\cryptocoins-preview.png" />
+    <Content Include="Content\fonts\demo.html" />
+    <Content Include="Content\fonts\gulpfile.js" />
+    <Content Include="Content\fonts\src\icons-template.css" />
+    <Content Include="Content\fonts\SVG\ADA-alt.svg" />
+    <Content Include="Content\fonts\SVG\ADA.svg" />
+    <Content Include="Content\fonts\SVG\ADC-alt.svg" />
+    <Content Include="Content\fonts\SVG\ADC.svg" />
+    <Content Include="Content\fonts\SVG\AEON-alt.svg" />
+    <Content Include="Content\fonts\SVG\AEON.svg" />
+    <Content Include="Content\fonts\SVG\AMP-alt.svg" />
+    <Content Include="Content\fonts\SVG\AMP.svg" />
+    <Content Include="Content\fonts\SVG\ANC-alt.svg" />
+    <Content Include="Content\fonts\SVG\ANC.svg" />
+    <Content Include="Content\fonts\SVG\ARCH-alt.svg" />
+    <Content Include="Content\fonts\SVG\ARCH.svg" />
+    <Content Include="Content\fonts\SVG\ARDR-alt.svg" />
+    <Content Include="Content\fonts\SVG\ARDR.svg" />
+    <Content Include="Content\fonts\SVG\ARK-alt.svg" />
+    <Content Include="Content\fonts\SVG\ARK.svg" />
+    <Content Include="Content\fonts\SVG\AUR-alt.svg" />
+    <Content Include="Content\fonts\SVG\AUR.svg" />
+    <Content Include="Content\fonts\SVG\BANX-alt.svg" />
+    <Content Include="Content\fonts\SVG\BANX.svg" />
+    <Content Include="Content\fonts\SVG\BAT-alt.svg" />
+    <Content Include="Content\fonts\SVG\BAT.svg" />
+    <Content Include="Content\fonts\SVG\BAY-alt.svg" />
+    <Content Include="Content\fonts\SVG\BAY.svg" />
+    <Content Include="Content\fonts\SVG\BC-alt.svg" />
+    <Content Include="Content\fonts\SVG\BC.svg" />
+    <Content Include="Content\fonts\SVG\BCH-alt.svg" />
+    <Content Include="Content\fonts\SVG\BCH.svg" />
+    <Content Include="Content\fonts\SVG\BCN-alt.svg" />
+    <Content Include="Content\fonts\SVG\BCN.svg" />
+    <Content Include="Content\fonts\SVG\BFT-alt.svg" />
+    <Content Include="Content\fonts\SVG\BFT.svg" />
+    <Content Include="Content\fonts\SVG\BRK-alt.svg" />
+    <Content Include="Content\fonts\SVG\BRK.svg" />
+    <Content Include="Content\fonts\SVG\BRX-alt.svg" />
+    <Content Include="Content\fonts\SVG\BRX.svg" />
+    <Content Include="Content\fonts\SVG\BSD-alt.svg" />
+    <Content Include="Content\fonts\SVG\BSD.svg" />
+    <Content Include="Content\fonts\SVG\BTA.svg" />
+    <Content Include="Content\fonts\SVG\BTC-alt.svg" />
+    <Content Include="Content\fonts\SVG\BTC.svg" />
+    <Content Include="Content\fonts\SVG\BTCD-alt.svg" />
+    <Content Include="Content\fonts\SVG\BTCD.svg" />
+    <Content Include="Content\fonts\SVG\BTM-alt.svg" />
+    <Content Include="Content\fonts\SVG\BTM.svg" />
+    <Content Include="Content\fonts\SVG\BTS-alt.svg" />
+    <Content Include="Content\fonts\SVG\BTS.svg" />
+    <Content Include="Content\fonts\SVG\CLAM-alt.svg" />
+    <Content Include="Content\fonts\SVG\CLAM.svg" />
+    <Content Include="Content\fonts\SVG\CLOAK-alt.svg" />
+    <Content Include="Content\fonts\SVG\CLOAK.svg" />
+    <Content Include="Content\fonts\SVG\DAO-alt.svg" />
+    <Content Include="Content\fonts\SVG\DAO.svg" />
+    <Content Include="Content\fonts\SVG\DASH-alt.svg" />
+    <Content Include="Content\fonts\SVG\DASH.svg" />
+    <Content Include="Content\fonts\SVG\DCR-alt.svg" />
+    <Content Include="Content\fonts\SVG\DCR.svg" />
+    <Content Include="Content\fonts\SVG\DCT-alt.svg" />
+    <Content Include="Content\fonts\SVG\DCT.svg" />
+    <Content Include="Content\fonts\SVG\DGB-alt.svg" />
+    <Content Include="Content\fonts\SVG\DGB.svg" />
+    <Content Include="Content\fonts\SVG\DGD.svg" />
+    <Content Include="Content\fonts\SVG\DGX.svg" />
+    <Content Include="Content\fonts\SVG\TRX.svg" />
+    <Content Include="Content\fonts\SVG\TRX-alt.svg" />
+    <Content Include="Content\fonts\SVG\DMD-alt.svg" />
+    <Content Include="Content\fonts\SVG\DMD.svg" />
+    <Content Include="Content\fonts\SVG\DOGE-alt.svg" />
+    <Content Include="Content\fonts\SVG\DOGE.svg" />
+    <Content Include="Content\fonts\SVG\EMC-alt.svg" />
+    <Content Include="Content\fonts\SVG\EMC.svg" />
+    <Content Include="Content\fonts\SVG\EOS-alt.svg" />
+    <Content Include="Content\fonts\SVG\EOS.svg" />
+    <Content Include="Content\fonts\SVG\ERC-alt.svg" />
+    <Content Include="Content\fonts\SVG\ERC.svg" />
+    <Content Include="Content\fonts\SVG\ETC-alt.svg" />
+    <Content Include="Content\fonts\SVG\ETC.svg" />
+    <Content Include="Content\fonts\SVG\ETH-alt.svg" />
+    <Content Include="Content\fonts\SVG\ETH.svg" />
+    <Content Include="Content\fonts\SVG\FC2-alt.svg" />
+    <Content Include="Content\fonts\SVG\FC2.svg" />
+    <Content Include="Content\fonts\SVG\FCT-alt.svg" />
+    <Content Include="Content\fonts\SVG\FCT.svg" />
+    <Content Include="Content\fonts\SVG\FLO-alt.svg" />
+    <Content Include="Content\fonts\SVG\FLO.svg" />
+    <Content Include="Content\fonts\SVG\FRK-alt.svg" />
+    <Content Include="Content\fonts\SVG\FRK.svg" />
+    <Content Include="Content\fonts\SVG\FTC-alt.svg" />
+    <Content Include="Content\fonts\SVG\FTC.svg" />
+    <Content Include="Content\fonts\SVG\GAME-alt.svg" />
+    <Content Include="Content\fonts\SVG\GAME.svg" />
+    <Content Include="Content\fonts\SVG\GBYTE-alt.svg" />
+    <Content Include="Content\fonts\SVG\GBYTE.svg" />
+    <Content Include="Content\fonts\SVG\GDC-alt.svg" />
+    <Content Include="Content\fonts\SVG\GDC.svg" />
+    <Content Include="Content\fonts\SVG\GEMZ-alt.svg" />
+    <Content Include="Content\fonts\SVG\GEMZ.svg" />
+    <Content Include="Content\fonts\SVG\GLD-alt.svg" />
+    <Content Include="Content\fonts\SVG\GLD.svg" />
+    <Content Include="Content\fonts\SVG\GNO-alt.svg" />
+    <Content Include="Content\fonts\SVG\GNO.svg" />
+    <Content Include="Content\fonts\SVG\GNT-alt.svg" />
+    <Content Include="Content\fonts\SVG\GNT.svg" />
+    <Content Include="Content\fonts\SVG\GOLOS-alt.svg" />
+    <Content Include="Content\fonts\SVG\GOLOS.svg" />
+    <Content Include="Content\fonts\SVG\GRC-alt.svg" />
+    <Content Include="Content\fonts\SVG\GRC.svg" />
+    <Content Include="Content\fonts\SVG\GRS.svg" />
+    <Content Include="Content\fonts\SVG\HEAT-alt.svg" />
+    <Content Include="Content\fonts\SVG\HEAT.svg" />
+    <Content Include="Content\fonts\SVG\ICN-alt.svg" />
+    <Content Include="Content\fonts\SVG\ICN.svg" />
+    <Content Include="Content\fonts\SVG\IFC-alt.svg" />
+    <Content Include="Content\fonts\SVG\IFC.svg" />
+    <Content Include="Content\fonts\SVG\INCNT-alt.svg" />
+    <Content Include="Content\fonts\SVG\INCNT.svg" />
+    <Content Include="Content\fonts\SVG\IOC-alt.svg" />
+    <Content Include="Content\fonts\SVG\IOC.svg" />
+    <Content Include="Content\fonts\SVG\IOTA-alt.svg" />
+    <Content Include="Content\fonts\SVG\IOTA.svg" />
+    <Content Include="Content\fonts\SVG\JBS-alt.svg" />
+    <Content Include="Content\fonts\SVG\JBS.svg" />
+    <Content Include="Content\fonts\SVG\KMD-alt.svg" />
+    <Content Include="Content\fonts\SVG\KMD.svg" />
+    <Content Include="Content\fonts\SVG\KOBO.svg" />
+    <Content Include="Content\fonts\SVG\KORE-alt.svg" />
+    <Content Include="Content\fonts\SVG\KORE.svg" />
+    <Content Include="Content\fonts\SVG\LBC-alt.svg" />
+    <Content Include="Content\fonts\SVG\LBC.svg" />
+    <Content Include="Content\fonts\SVG\LDOGE-alt.svg" />
+    <Content Include="Content\fonts\SVG\LDOGE.svg" />
+    <Content Include="Content\fonts\SVG\LSK-alt.svg" />
+    <Content Include="Content\fonts\SVG\LSK.svg" />
+    <Content Include="Content\fonts\SVG\LTC-alt.svg" />
+    <Content Include="Content\fonts\SVG\LTC.svg" />
+    <Content Include="Content\fonts\SVG\MAID-alt.svg" />
+    <Content Include="Content\fonts\SVG\MAID.svg" />
+    <Content Include="Content\fonts\SVG\MCO-alt.svg" />
+    <Content Include="Content\fonts\SVG\MCO.svg" />
+    <Content Include="Content\fonts\SVG\MINT-alt.svg" />
+    <Content Include="Content\fonts\SVG\MINT.svg" />
+    <Content Include="Content\fonts\SVG\MONA-alt.svg" />
+    <Content Include="Content\fonts\SVG\MONA.svg" />
+    <Content Include="Content\fonts\SVG\MRC.svg" />
+    <Content Include="Content\fonts\SVG\MSC-alt.svg" />
+    <Content Include="Content\fonts\SVG\MSC.svg" />
+    <Content Include="Content\fonts\SVG\MTR-alt.svg" />
+    <Content Include="Content\fonts\SVG\MTR.svg" />
+    <Content Include="Content\fonts\SVG\MUE-alt.svg" />
+    <Content Include="Content\fonts\SVG\MUE.svg" />
+    <Content Include="Content\fonts\SVG\NBT.svg" />
+    <Content Include="Content\fonts\SVG\NEO-alt.svg" />
+    <Content Include="Content\fonts\SVG\NEO.svg" />
+    <Content Include="Content\fonts\SVG\NEOS-alt.svg" />
+    <Content Include="Content\fonts\SVG\NEOS.svg" />
+    <Content Include="Content\fonts\SVG\NEU-alt.svg" />
+    <Content Include="Content\fonts\SVG\NEU.svg" />
+    <Content Include="Content\fonts\SVG\NLG-alt.svg" />
+    <Content Include="Content\fonts\SVG\NLG.svg" />
+    <Content Include="Content\fonts\SVG\NMC-alt.svg" />
+    <Content Include="Content\fonts\SVG\NMC.svg" />
+    <Content Include="Content\fonts\SVG\NOTE-alt.svg" />
+    <Content Include="Content\fonts\SVG\NOTE.svg" />
+    <Content Include="Content\fonts\SVG\NVC-alt.svg" />
+    <Content Include="Content\fonts\SVG\NVC.svg" />
+    <Content Include="Content\fonts\SVG\NXT-alt.svg" />
+    <Content Include="Content\fonts\SVG\NXT.svg" />
+    <Content Include="Content\fonts\SVG\OK-alt.svg" />
+    <Content Include="Content\fonts\SVG\OK.svg" />
+    <Content Include="Content\fonts\SVG\OMG-alt.svg" />
+    <Content Include="Content\fonts\SVG\OMG.svg" />
+    <Content Include="Content\fonts\SVG\OMNI-alt.svg" />
+    <Content Include="Content\fonts\SVG\OMNI.svg" />
+    <Content Include="Content\fonts\SVG\OPAL-alt.svg" />
+    <Content Include="Content\fonts\SVG\OPAL.svg" />
+    <Content Include="Content\fonts\SVG\PART-alt.svg" />
+    <Content Include="Content\fonts\SVG\PART.svg" />
+    <Content Include="Content\fonts\SVG\PIGGY-alt.svg" />
+    <Content Include="Content\fonts\SVG\PIGGY.svg" />
+    <Content Include="Content\fonts\SVG\PINK-alt.svg" />
+    <Content Include="Content\fonts\SVG\PINK.svg" />
+    <Content Include="Content\fonts\SVG\PIVX-alt.svg" />
+    <Content Include="Content\fonts\SVG\PIVX.svg" />
+    <Content Include="Content\fonts\SVG\POT-alt.svg" />
+    <Content Include="Content\fonts\SVG\POT.svg" />
+    <Content Include="Content\fonts\SVG\PPC-alt.svg" />
+    <Content Include="Content\fonts\SVG\PPC.svg" />
+    <Content Include="Content\fonts\SVG\QRK-alt.svg" />
+    <Content Include="Content\fonts\SVG\QRK.svg" />
+    <Content Include="Content\fonts\SVG\QTUM-alt.svg" />
+    <Content Include="Content\fonts\SVG\QTUM.svg" />
+    <Content Include="Content\fonts\SVG\RADS-alt.svg" />
+    <Content Include="Content\fonts\SVG\RADS.svg" />
+    <Content Include="Content\fonts\SVG\RBIES-alt.svg" />
+    <Content Include="Content\fonts\SVG\RBIES.svg" />
+    <Content Include="Content\fonts\SVG\RBT-alt.svg" />
+    <Content Include="Content\fonts\SVG\RBT.svg" />
+    <Content Include="Content\fonts\SVG\RBY-alt.svg" />
+    <Content Include="Content\fonts\SVG\RBY.svg" />
+    <Content Include="Content\fonts\SVG\RDD-alt.svg" />
+    <Content Include="Content\fonts\SVG\RDD.svg" />
+    <Content Include="Content\fonts\SVG\REP-alt.svg" />
+    <Content Include="Content\fonts\SVG\REP.svg" />
+    <Content Include="Content\fonts\SVG\RISE-alt.svg" />
+    <Content Include="Content\fonts\SVG\RISE.svg" />
+    <Content Include="Content\fonts\SVG\SALT-alt.svg" />
+    <Content Include="Content\fonts\SVG\SALT.svg" />
+    <Content Include="Content\fonts\SVG\SAR-alt.svg" />
+    <Content Include="Content\fonts\SVG\SAR.svg" />
+    <Content Include="Content\fonts\SVG\SCOT-alt.svg" />
+    <Content Include="Content\fonts\SVG\SCOT.svg" />
+    <Content Include="Content\fonts\SVG\SDC-alt.svg" />
+    <Content Include="Content\fonts\SVG\SDC.svg" />
+    <Content Include="Content\fonts\SVG\SIA-alt.svg" />
+    <Content Include="Content\fonts\SVG\SIA.svg" />
+    <Content Include="Content\fonts\SVG\SJCX-alt.svg" />
+    <Content Include="Content\fonts\SVG\SJCX.svg" />
+    <Content Include="Content\fonts\SVG\SLG-alt.svg" />
+    <Content Include="Content\fonts\SVG\SLG.svg" />
+    <Content Include="Content\fonts\SVG\SLS-alt.svg" />
+    <Content Include="Content\fonts\SVG\SLS.svg" />
+    <Content Include="Content\fonts\SVG\SNRG-alt.svg" />
+    <Content Include="Content\fonts\SVG\SNRG.svg" />
+    <Content Include="Content\fonts\SVG\START-alt.svg" />
+    <Content Include="Content\fonts\SVG\START.svg" />
+    <Content Include="Content\fonts\SVG\STEEM-alt.svg" />
+    <Content Include="Content\fonts\SVG\STEEM.svg" />
+    <Content Include="Content\fonts\SVG\STR-alt.svg" />
+    <Content Include="Content\fonts\SVG\STR.svg" />
+    <Content Include="Content\fonts\SVG\STRAT-alt.svg" />
+    <Content Include="Content\fonts\SVG\STRAT.svg" />
+    <Content Include="Content\fonts\SVG\SWIFT-alt.svg" />
+    <Content Include="Content\fonts\SVG\SWIFT.svg" />
+    <Content Include="Content\fonts\SVG\SYNC-alt.svg" />
+    <Content Include="Content\fonts\SVG\SYNC.svg" />
+    <Content Include="Content\fonts\SVG\SYS-alt.svg" />
+    <Content Include="Content\fonts\SVG\SYS.svg" />
+    <Content Include="Content\fonts\SVG\TRIG-alt.svg" />
+    <Content Include="Content\fonts\SVG\TRIG.svg" />
+    <Content Include="Content\fonts\SVG\TX-alt.svg" />
+    <Content Include="Content\fonts\SVG\TX.svg" />
+    <Content Include="Content\fonts\SVG\UBQ-alt.svg" />
+    <Content Include="Content\fonts\SVG\UBQ.svg" />
+    <Content Include="Content\fonts\SVG\UNITY-alt.svg" />
+    <Content Include="Content\fonts\SVG\UNITY.svg" />
+    <Content Include="Content\fonts\SVG\USDT-alt.svg" />
+    <Content Include="Content\fonts\SVG\USDT.svg" />
+    <Content Include="Content\fonts\SVG\VIOR-alt.svg" />
+    <Content Include="Content\fonts\SVG\VIOR.svg" />
+    <Content Include="Content\fonts\SVG\VNL-alt.svg" />
+    <Content Include="Content\fonts\SVG\VNL.svg" />
+    <Content Include="Content\fonts\SVG\VPN-alt.svg" />
+    <Content Include="Content\fonts\SVG\VPN.svg" />
+    <Content Include="Content\fonts\SVG\VRC-alt.svg" />
+    <Content Include="Content\fonts\SVG\VRC.svg" />
+    <Content Include="Content\fonts\SVG\VTC-alt.svg" />
+    <Content Include="Content\fonts\SVG\VTC.svg" />
+    <Content Include="Content\fonts\SVG\WAVES-alt.svg" />
+    <Content Include="Content\fonts\SVG\WAVES.svg" />
+    <Content Include="Content\fonts\SVG\XAI-alt.svg" />
+    <Content Include="Content\fonts\SVG\XAI.svg" />
+    <Content Include="Content\fonts\SVG\XBS-alt.svg" />
+    <Content Include="Content\fonts\SVG\XBS.svg" />
+    <Content Include="Content\fonts\SVG\XCP-alt.svg" />
+    <Content Include="Content\fonts\SVG\XCP.svg" />
+    <Content Include="Content\fonts\SVG\XEM-alt.svg" />
+    <Content Include="Content\fonts\SVG\XEM.svg" />
+    <Content Include="Content\fonts\SVG\XMR.svg" />
+    <Content Include="Content\fonts\SVG\XPM-alt.svg" />
+    <Content Include="Content\fonts\SVG\XPM.svg" />
+    <Content Include="Content\fonts\SVG\XRP-alt.svg" />
+    <Content Include="Content\fonts\SVG\XRP.svg" />
+    <Content Include="Content\fonts\SVG\XTZ-alt.svg" />
+    <Content Include="Content\fonts\SVG\XTZ.svg" />
+    <Content Include="Content\fonts\SVG\XVG-alt.svg" />
+    <Content Include="Content\fonts\SVG\XVG.svg" />
+    <Content Include="Content\fonts\SVG\XZC-alt.svg" />
+    <Content Include="Content\fonts\SVG\XZC.svg" />
+    <Content Include="Content\fonts\SVG\YBC-alt.svg" />
+    <Content Include="Content\fonts\SVG\YBC.svg" />
+    <Content Include="Content\fonts\SVG\ZEC-alt.svg" />
+    <Content Include="Content\fonts\SVG\ZEC.svg" />
+    <Content Include="Content\fonts\SVG\ZEIT-alt.svg" />
+    <Content Include="Content\fonts\SVG\ZEIT.svg" />
+    <Content Include="Content\fonts\webfont\cryptocoins-colors.css" />
+    <Content Include="Content\fonts\webfont\cryptocoins.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\application.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\fonts\.travis.yml" />
+    <Content Include="Content\fonts\CONTRIBUTING.md" />
+    <Content Include="Content\fonts\issue_template.md" />
+    <Content Include="Content\fonts\LICENCE" />
+    <Content Include="Content\fonts\package.json" />
+    <Content Include="Content\fonts\README.md" />
+    <Content Include="Content\fonts\webfont\cryptocoins.ttf" />
+    <Content Include="Content\fonts\webfont\cryptocoins.woff" />
+    <Content Include="Content\fonts\webfont\cryptocoins.woff2" />
+    <Content Include="Scripts\highchart\api\highcharts.json" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\chart.min.js" />
+    <Content Include="Scripts\highchart\api\api.js" />
+    <Content Include="Scripts\highchart\api\jquery-1.11.3.min.js" />
+    <Content Include="Scripts\highchart\api\jquery-ui.min.js" />
+    <Content Include="Scripts\highchart\api\jquery.sidr.min.js" />
+    <Content Include="Scripts\highchart\gfx\vml-radial-gradient.png" />
+    <Content Include="Scripts\highchart\graphics\meteogram-symbols-30px.png" />
+    <Content Include="Scripts\highchart\graphics\skies.jpg" />
+    <Content Include="Scripts\highchart\graphics\snow.png" />
+    <Content Include="Scripts\highchart\graphics\sun.png" />
+    <Content Include="Scripts\highchart\index.htm" />
+    <Content Include="Scripts\highchart\js\adapters\standalone-framework.js" />
+    <Content Include="Scripts\highchart\js\adapters\standalone-framework.src.js" />
+    <Content Include="Scripts\highchart\js\highcharts-3d.js" />
+    <Content Include="Scripts\highchart\js\highcharts-3d.src.js" />
+    <Content Include="Scripts\highchart\js\highcharts-all.js" />
+    <Content Include="Scripts\highchart\js\highcharts-more.js" />
+    <Content Include="Scripts\highchart\js\highcharts-more.src.js" />
+    <Content Include="Scripts\highchart\js\highcharts.js" />
+    <Content Include="Scripts\highchart\js\highcharts.src.js" />
+    <Content Include="Scripts\highchart\js\modules\canvas-tools.js" />
+    <Content Include="Scripts\highchart\js\modules\canvas-tools.src.js" />
+    <Content Include="Scripts\highchart\js\modules\data.js" />
+    <Content Include="Scripts\highchart\js\modules\data.src.js" />
+    <Content Include="Scripts\highchart\js\modules\drilldown.js" />
+    <Content Include="Scripts\highchart\js\modules\drilldown.src.js" />
+    <Content Include="Scripts\highchart\js\modules\exporting.js" />
+    <Content Include="Scripts\highchart\js\modules\exporting.src.js" />
+    <Content Include="Scripts\highchart\js\modules\funnel.js" />
+    <Content Include="Scripts\highchart\js\modules\funnel.src.js" />
+    <Content Include="Scripts\highchart\js\modules\heatmap.js" />
+    <Content Include="Scripts\highchart\js\modules\heatmap.src.js" />
+    <Content Include="Scripts\highchart\js\modules\no-data-to-display.js" />
+    <Content Include="Scripts\highchart\js\modules\no-data-to-display.src.js" />
+    <Content Include="Scripts\highchart\js\modules\solid-gauge.js" />
+    <Content Include="Scripts\highchart\js\modules\solid-gauge.src.js" />
+    <Content Include="Scripts\highchart\js\themes\dark-blue.js" />
+    <Content Include="Scripts\highchart\js\themes\dark-green.js" />
+    <Content Include="Scripts\highchart\js\themes\dark-unica.js" />
+    <Content Include="Scripts\highchart\js\themes\gray.js" />
+    <Content Include="Scripts\highchart\js\themes\grid-light.js" />
+    <Content Include="Scripts\highchart\js\themes\grid.js" />
+    <Content Include="Scripts\highchart\js\themes\sand-signika.js" />
+    <Content Include="Scripts\highchart\js\themes\skies.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery.slim.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\ui-bootstrap.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Binance.API.Csharp.Client.Domain\Binance.API.Csharp.Client.Domain.csproj">
+      <Project>{e255f763-a2fe-43a8-9331-019796c935c7}</Project>
+      <Name>Binance.API.Csharp.Client.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Binance.API.Csharp.Client.Models\Binance.API.Csharp.Client.Models.csproj">
+      <Project>{7cf40eb8-d81d-40b5-b849-17e5662175d6}</Project>
+      <Name>Binance.API.Csharp.Client.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Binance.API.Csharp.Client\Binance.API.Csharp.Client.csproj">
+      <Project>{ec2a020e-338a-46ee-9d08-c158cbd49c92}</Project>
+      <Name>Binance.API.Csharp.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Binance.LIB.Csharp.Core\Binance.LIB.Csharp.Core.csproj">
+      <Project>{5ff2e12c-b506-423a-a5cc-920fdb7895b8}</Project>
+      <Name>Binance.LIB.Csharp.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4010</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3388/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
